@@ -4,11 +4,29 @@ using UnityEngine;
 
 public class Level : MonoBehaviour
 {
-    // SerializeField for debugging purposes
-    [SerializeField] int breakableBlocks;
+    // Parameters
+    [SerializeField] int breakableBlocks; // SerializeField for debugging purposes
+
+    // Cached reference
+    SceneLoader sceneLoader;
+
+    // Start is called before the first frame update
+    private void Start()
+    {
+        sceneLoader = FindObjectOfType<SceneLoader>();
+    }
 
     public void CountBreakableBlocks()
     {
         breakableBlocks++;
+    }
+
+    public void BlockDestroyed()
+    {
+        breakableBlocks--;
+        if (breakableBlocks <= 0)
+        {
+            sceneLoader.LoadNextScene();
+        }
     }
 }
