@@ -5,10 +5,11 @@ using UnityEngine;
 public class Block : MonoBehaviour
 {
     [SerializeField] AudioClip blockBreakSound;
+    [SerializeField] GameObject blockSparklesVFX;
 
     // Cached reference
     Level level;
-    GameStatus gameStatus;
+    GameSession gameStatus;
 
     // Start is called before the first frame update
     private void Start()
@@ -16,7 +17,7 @@ public class Block : MonoBehaviour
         level = FindObjectOfType<Level>();
         level.CountBreakableBlocks();
 
-        gameStatus = FindObjectOfType<GameStatus>();
+        gameStatus = FindObjectOfType<GameSession>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -29,6 +30,13 @@ public class Block : MonoBehaviour
         AudioSource.PlayClipAtPoint(blockBreakSound, Camera.main.transform.position);
         Destroy(gameObject);
         level.BlockDestroyed();
+        TriggerSparklesVFX();
         gameStatus.AddToScore();
+    }
+
+    private void TriggerSparklesVFX()
+    {
+        GameObject sparkles = Instantiate(blockSparklesVFX, transform.position, transform.rotation);
+        Destroy(sparkles, 1f);
     }
 }

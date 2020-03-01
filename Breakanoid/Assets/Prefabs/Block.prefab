@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blockBreakSound: {fileID: 8300000, guid: b4634b86e12e0334ab4cfb57144fa849, type: 3}
+  blockSparklesVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
 --- !u!61 &2354333701796197526
 BoxCollider2D:
   m_ObjectHideFlags: 0
