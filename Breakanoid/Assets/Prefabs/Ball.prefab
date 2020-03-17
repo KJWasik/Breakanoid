@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 564c16f1a94dafd47afa78d41eb5b9d5, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.5019608, b: 0.5254902, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -137,6 +137,8 @@ MonoBehaviour:
   paddle: {fileID: 0}
   xPush: 2
   yPush: 15
+  ballSounds: []
+  randomFactor: 0.1
 --- !u!1 &7107832589753998023
 GameObject:
   m_ObjectHideFlags: 0
