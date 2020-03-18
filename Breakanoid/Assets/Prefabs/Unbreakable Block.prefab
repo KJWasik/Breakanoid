@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 2354333701796198250}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.6839724, y: 4.9266577, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 12, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -97,6 +97,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockBreakSound: {fileID: 8300000, guid: b4634b86e12e0334ab4cfb57144fa849, type: 3}
   blockSparklesVFX: {fileID: 100000, guid: 7d846c02296ef4dc4abff04ce3e5262c, type: 3}
+  hitSprites: []
+  timesHit: 0
 --- !u!61 &2354333701796197526
 BoxCollider2D:
   m_ObjectHideFlags: 0
