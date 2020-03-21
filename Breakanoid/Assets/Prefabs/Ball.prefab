@@ -138,7 +138,7 @@ MonoBehaviour:
   xPush: 2
   yPush: 15
   ballSounds: []
-  randomFactor: 0.1
+  randomFactor: 0.3
 --- !u!1 &7107832589753998023
 GameObject:
   m_ObjectHideFlags: 0
