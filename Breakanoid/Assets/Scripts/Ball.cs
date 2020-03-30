@@ -10,6 +10,7 @@ public class Ball : MonoBehaviour
     [SerializeField] float xPush = 2f;
     [SerializeField] float yPush = 15f;
     [SerializeField] AudioClip[] ballSounds;
+    [SerializeField] [Range(0, 1)] float ballSoundsVolume = 0.3f;
     [SerializeField] float randomFactor = 0.1f;
 
     // State
@@ -61,7 +62,7 @@ public class Ball : MonoBehaviour
         if (hasStarted)
         {
             AudioClip clip = ballSounds[0];
-            myAudioSource.PlayOneShot(clip);
+            AudioSource.PlayClipAtPoint(ballSounds[0], Camera.main.transform.position, ballSoundsVolume);
             myRigidbody2D.velocity += velocityTweak;
         }
     }

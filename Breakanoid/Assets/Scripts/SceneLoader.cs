@@ -26,6 +26,11 @@ public class SceneLoader : MonoBehaviour
         gameStatus.ResetGame();
     }
 
+    public void LoadControls()
+    {
+        SceneManager.LoadScene("Controls");
+    }
+
     public void QuitGame()
     {
         Application.Quit();

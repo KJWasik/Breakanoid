@@ -7,6 +7,7 @@ public class Block : MonoBehaviour
 {
     // Configuration parameters
     [SerializeField] AudioClip blockBreakSound;
+    [SerializeField] [Range(0, 1)] float blockBreakSoundVolume = 0.3f;
     [SerializeField] GameObject blockSparklesVFX;
     [SerializeField] Sprite[] hitSprites;
 
@@ -68,7 +69,7 @@ public class Block : MonoBehaviour
 
     private void DestroyBlock()
     {
-        AudioSource.PlayClipAtPoint(blockBreakSound, Camera.main.transform.position);
+        AudioSource.PlayClipAtPoint(blockBreakSound, Camera.main.transform.position, blockBreakSoundVolume);
         Destroy(gameObject);
         level.BlockDestroyed();
         TriggerSparklesVFX();
